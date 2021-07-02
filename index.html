@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Charity Database V3</title>
+    <!--This makes sure that there screens are not seen from the start -->
+    <style>
+      .screen{display:none;}
+    </style>
+    <!--this is for the map page-->
+    <style type="text/css">
+              /* Set the size of the div element that contains the map */
+              #map {
+                height: 400px;
+                /* The height is 400 pixels */
+                width: 100%;
+                /* The width is the width of the web page */
+              }
+      </style>
+      <!-- This is to hide the template for the search section CARDS -->
+        <style>
+          .template {
+            display:none;
+          }
+        </style>
+      
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="index.html">Chicago Charity Database</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav"> <!--Think of that as your topnav -->
+          <a data-screen="home" class="nav-item nav-link" >Home/Instructions</a>
+          <a data-screen="form" class="nav-item nav-link" >Data Retrival</a>
+          <a data-screen="data" class="nav-item nav-link" >Available Tab</a>
+          <a data-screen="map" class="nav-item nav-link" >Available Tab</a> 
+          <a data-screen="about" class="nav-item nav-link" >Available Tab</a>       
+        </div>
+      </div>
+      <!-- the original screens where placed here-->
+    </nav>
+    <!--Here is where I am going to put the screens -->
+    <div id="content">
+
+    <!-- The Home page -->
+    <center>
+      <div class="screen" id="home">
+        <!-- drop one of the screens here -->
+          <!-- columns that I plan to use for the intro and Instructions -->
+          <div class="bd-example">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm">
+                <!-- this is where the information upon TA98 is going to be along with the logo of the company and brief text of information and a link to their page -->
+                <div class="card" style="width: 18rem;">
+                  <img class="card-img-top" src="whiteTA98.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <p class="card-text">This Database was created by an intern from TA98, Summer of 2020 in order to collect data from Chicago Charities.</p>
+                  </div>
+                    <a href="https://www.ta98.org/" class="btn btn-primary">More Upon TA98</a>
+                </div>                
+              </div>
+              <div class="col-sm">
+                <!-- The Instruction Card -->
+                <div class="card" style="width: 18rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">Instructions</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Please Read The Instructions Well</h6>
+                    <p class="card-text">Someome quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p>Click on the Data Retrival tab in order to see services and prices. </p>
+                  </div>
+                </div>
+
+
+
+              </div>
+              
+            </div>
+          </div>
+          </div>
+      </center>
+      </div>
+
+
+      <!--The Prices Page -->
+      <div class="screen" id="form">
+        <!-- Available screen for planning -->
+          <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+      <h1 class="display-4 fw-normal">Pricing</h1>
+      <p class="fs-5 text-muted">Based on your selection you will receive that number of charities, they will be selected at random. Note: there are no special petitions allowed and all sales are final.</p>
+    </div>
+<!-- Here is where the different levels of services being offered is going to be dislayed -->
+      <main>
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Tier 1</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">$5<small class="text-muted fw-light"></small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>100 Charities</li>
+              <li>Email support</li>
+            </ul>
+            <!-- at the moment I have this temporary link to see if it works -->
+            <a href="https://forms.gle/pCbBJQpooeJRoVov7" type="button" class="w-100 btn btn-lg btn-outline-primary">Get Started</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Tier 2</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">$10<small class="text-muted fw-light"></small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>300 Charities</li>
+              <li>Email support</li>
+            </ul>
+            <a href="https://forms.gle/pCbBJQpooeJRoVov7" type="button" class="w-100 btn btn-lg btn-primary">Get started</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm border-primary">
+          <div class="card-header py-3 text-white bg-primary border-primary">
+            <h4 class="my-0 fw-normal">Tier 3</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">$15<small class="text-muted fw-light"></small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>500 Charities</li>
+              <li>Email support</li>
+            </ul>
+            <a href="https://forms.gle/pCbBJQpooeJRoVov7" type="button" class="w-100 btn btn-lg btn-primary">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    </div>
+  </main>
+
+<!-- end of the screen the below div tag is where the screen ends -->
+
+      </div>
+
+      <!-- The results page -->
+      <div class="screen" id="data">
+        <!-- another screen -->
+
+        <p>Here is another scren</p>
+      </div>
+
+
+      <!-- Another page -->
+      <div class="screen" id="map">
+        <!-- another screen -->
+                <p>Here is another scren</p>
+
+      </div>
+
+
+      <!-- The about page -->
+      <div class="screen" id="about">
+        <!-- another screen -->
+                <p>Here is another scren</p>
+
+    </div>
+    <!-- End of content -->
+
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Here is where the typescript is going to be, that makes the screens visible-->
+      <script>
+        // This will make sure that the home screen is always being shown 
+        document.querySelector("#home").style.display= "block";
+
+        let navAnchors= document.querySelectorAll("div#navbarNavAltMarkup a")
+
+        navAnchors.forEach( (anchor) => {
+          anchor.addEventListener("click", (event) => {
+
+            //hides all the screens first
+            document.querySelectorAll(".screen").forEach( (screen) => {
+              screen.style.display = "none";
+            });
+            //read data screen attribute  
+            let screen = event.target.getAttribute("data-screen");
+
+            //find relevant screen
+            let targetScreen= document.querySelector("#" + screen);
+
+            //show it 
+            targetScreen.style.display= "block";
+          })
+        })
+      </script>
+     
+      
+  
+  </body>
+</html>
