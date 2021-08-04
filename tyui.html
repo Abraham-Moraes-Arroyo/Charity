@@ -1,1 +1,164 @@
 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Accodion example</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<!-- the styling for the accordion code -->
+    <style>
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc; 
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+</style>
+<!-- end of the accordion code -->
+
+<!-- Here is for the button   -->
+<style>
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+</style>
+  </head>
+  <body>
+    <center>
+    <h1>These are your charities:</h1>
+      <h2>Click on the Catagories that are in the screen to see what charities you got</h2>
+    </center>
+  
+<!-- Start of the accodion code -->
+
+<button class="accordion"> Senior </button>
+<div class="panel">
+  <!-- belwo is where the content is going to be  -->
+ <iframe class="airtable-embed" src="https://airtable.com/embed/shrH9Z7kPVXXAqVh2?backgroundColor=red&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+</div>
+
+<button class="accordion"> Business </button>
+<div class="panel">
+  <!-- belwo is where the content is going to be  -->
+<iframe class="airtable-embed" src="https://airtable.com/embed/shr1uxdxa5jHdHnyG?backgroundColor=red&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+</div>
+
+<button class="accordion"> Private </button>
+<div class="panel">
+  <!-- belwo is where the content is going to be  -->
+<iframe class="airtable-embed" src="https://airtable.com/embed/shr59XeVXoKNMAR6t?backgroundColor=red&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+</div>
+
+<button class="accordion"> Fund Raising </button>
+<div class="panel">
+  <!-- belwo is where the content is going to be  -->
+<iframe class="airtable-embed" src="https://airtable.com/embed/shrqynx8L9l8szdHI?backgroundColor=red&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+</div>
+
+<button class="accordion"> Cancer </button>
+<div class="panel">
+  <!-- belwo is where the content is going to be  -->
+<iframe class="airtable-embed" src="https://airtable.com/embed/shrRjV9wtMSNUtypO?backgroundColor=red&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+</div>
+<!-- End of the accodion code -->
+
+
+<!-- Button that will take the user to the top -->
+
+<button onclick="topFunction()" id="myBtn" title="Go to top"> Top</button>
+
+<!-- The script for the accordion to work, this deals with the "animation" -->
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
+<!-- end of accodion script -->
+
+<!-- Start of the script for the TOP button -->
+<script>
+//on the right time of pressing the button
+
+mybutton =document.getElementById("myBtn");
+
+// When the user gets at 20px down, this will trigger the button 
+
+window.onscroll=function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// The action of getting the user to the top of the page
+function topFunction(){
+  document.body.scrollTop =0; //This is done exclusively for Safari web browser
+  document.documentElement.scrollTop=0; //This is for other chrome based web browser, and other brwosers
+}
+</script>
+<!-- End of the script for the TOP button -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
