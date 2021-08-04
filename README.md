@@ -1,4 +1,3 @@
-# Charity
+# Charity work 
 
-There is finally a working page and the next thing that I plan to implement is having a button that will give the user a google form button that
-asks the user what charities stook out the most to them. David Rojas suggested that. 
+I have created the format in which the charities can be organized and displayed onto a screen. There is still a lot of work that needs to be done. 
