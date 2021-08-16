@@ -1,88 +1,135 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Charity Database V3</title>
-    <!--This makes sure that there screens are not seen from the start -->
-    <style>
-      .screen{display:none;}
-    </style>
-    <!--this is for the map page-->
-    <style type="text/css">
-              /* Set the size of the div element that contains the map */
-              #map {
-                height: 400px;
-                /* The height is 400 pixels */
-                width: 100%;
-                /* The width is the width of the web page */
-              }
-      </style>
-      <!-- This is to hide the template for the search section CARDS -->
-        <style>
-          .template {
-            display:none;
-          }
-        </style>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	 crossorigin="anonymous">
 
-        <!-- the styling for the accordion code -->
-    <style>
-.accordion {
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-  transition: 0.4s;
-}
+	<title>Charity Database V3</title>
+	<!--This makes sure that there screens are not seen from the start -->
+	<style>
+		.screen {
+			display: none;
+		}
+	</style>
+	<!--this is for the map page-->
+	<style type="text/css">
+		/* Set the size of the div element that contains the map */
+		#map {
+			height: 400px;
+			/* The height is 400 pixels */
+			width: 100%;
+			/* The width is the width of the web page */
+		}
+	</style>
+	<!-- This is to hide the template for the search section CARDS -->
+	<style>
+		.template {
+			display: none;
+		}
+	</style>
 
-.active, .accordion:hover {
-  background-color: #ccc; 
-}
+	<!-- the styling for the accordion code -->
+	<style>
+		.accordion {
+			background-color: #eee;
+			color: #444;
+			cursor: pointer;
+			padding: 18px;
+			width: 100%;
+			border: none;
+			text-align: left;
+			outline: none;
+			font-size: 15px;
+			transition: 0.4s;
+		}
 
-.panel {
-  padding: 0 18px;
-  display: none;
-  background-color: white;
-  overflow: hidden;
-}
-</style>
-<!-- end of the accordion code -->
+		.active,
+		.accordion:hover {
+			background-color: #ccc;
+		}
 
-<!-- Here is for the button   -->
-<style>
-#myBtn {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 30px;
-  z-index: 99;
-  font-size: 18px;
-  border: none;
-  outline: none;
-  background-color: red;
-  color: white;
-  cursor: pointer;
-  padding: 15px;
-  border-radius: 4px;
-}
+		.panel {
+			padding: 0 18px;
+			display: none;
+			background-color: black;
+			overflow: hidden;
+		}
+	</style>
+	<!-- end of the accordion code -->
 
-</style>
-      
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="index.html">Chicago Charity Database</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+	<!-- This is for the columns that are going to hold the cards -->
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		/* Create two equal columns that floats next to each other */
+		.column {
+			float: left;
+			width: 50%;
+			padding: 10px;
+			/* height: 300px; Should be removed. Only for demonstration */
+		}
+
+		/* Clear floats after the columns */
+		.row:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+	</style>
+
+	<!-- End of the columns -->
+
+	<!-- This style is targeted upon the background photo that is going to
+  be used to place the search bar upon -->
+	<style>
+		.container {
+			position: relative;
+			text-align: center;
+			color: black;
+		}
+
+		.centered {
+			position: absolute;
+			top: 30%;
+			left: 40%;
+			transform: translate(-30%, -50%);
+		}
+	</style>
+	<!-- End of the background photo -->
+
+	<!-- Here is for the button   -->
+	<style>
+		#myBtn {
+			display: none;
+			position: fixed;
+			bottom: 20px;
+			right: 30px;
+			z-index: 99;
+			font-size: 18px;
+			border: none;
+			outline: none;
+			background-color: red;
+			color: white;
+			cursor: pointer;
+			padding: 15px;
+			border-radius: 4px;
+		}
+	</style>
+
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="index.html">Chicago Charity Database</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -100,44 +147,63 @@
     <div id="content">
 
     <!-- The Home page -->
+
+
+    <!-- This  is my take on having a background photo that is being used to put the search bar -->
+
+    <br>
     <center>
       <div class="screen" id="home">
         <!-- drop one of the screens here -->
           <!-- columns that I plan to use for the intro and Instructions -->
-          <div class="bd-example">
           <div class="container">
-            <div class="row">
-              <div class="col-sm">
-                <!-- this is where the information upon TA98 is going to be along with the logo of the company and brief text of information and a link to their page -->
-                <div class="card" style="width: 18rem;">
+  <center>
+<img src="Chicagoflag.png" style="width:60;">
+  </center>
+<!-- Here is where we are going to place the search bar -->
+  <div class="centered">
+    <!-- Have the name of the web page below and then use a breaking tag in order to get the search bar below it  -->
+    <h1 class="display-1">Chicago Charity Database</h1>
+    <!-- Below is the code for the search bar  -->
+    <div class="bar">
+    </div>
+  </div>
+  </div>
+    <div class="row">
+  <div class="column" >
+   <!-- Here is the left column -->
+    <div class="card" style="width: 18rem;">
                   <img class="card-img-top" src="whiteTA98.jpg" alt="Card image cap">
                   <div class="card-body">
                     <p class="card-text">This Database was created by an intern from TA98, Summer of 2020 in order to collect data from Chicago Charities.</p>
                   </div>
                     <a href="https://www.ta98.org/" class="btn btn-primary">More Upon TA98</a>
-                </div>                
-              </div>
-              <div class="col-sm">
-                <!-- The Instruction Card -->
-                <div class="card" style="width: 18rem;">
+                </div>
+  </div>
+  <div class="column" >
+   <!-- Here is the right Column -->
+       <div class="card" style="width: 18rem;">
                   <div class="card-body">
                     <h5 class="card-title">Instructions</h5>
                     <h6 class="card-subtitle mb-2 text-muted">Please Read The Instructions Well</h6>
                     <p class="card-text">Someome quick example text to build on the card title and make up the bulk of the card's content.</p>
                     <p>Click on the Data Retrival tab in order to see services and prices. </p>
+
+                    <button onclick="topFunction()" id="myBtn" title="Go to top"> Top</button> 
                   </div>
                 </div>
+  </div>
+</div>
 
 
 
-              </div>
-              
-            </div>
-          </div>
-          </div>
-      </center>
-      </div>
+         </div>
+    </center>
+</div>
+ 
 
+    </div>
+    </div>
 <!-- This is the link that will be used in order to have the user see the base only and not edit anything on it
 https://airtable.com/invite/l?inviteId=invUzfTuNjtevESaK&inviteToken=c0ac964b69c626be4e061ea84b43eaa299ea025dde5496ace929d8e60386d52e&utm_source=email
 
