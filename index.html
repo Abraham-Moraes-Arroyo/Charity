@@ -29,6 +29,54 @@
             display:none;
           }
         </style>
+
+        <!-- the styling for the accordion code -->
+    <style>
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc; 
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+</style>
+<!-- end of the accordion code -->
+
+<!-- Here is for the button   -->
+<style>
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+</style>
       
   </head>
   <body>
@@ -41,9 +89,9 @@
         <div class="navbar-nav"> <!--Think of that as your topnav -->
           <a data-screen="home" class="nav-item nav-link" >Home/Instructions</a>
           <a data-screen="form" class="nav-item nav-link" >Data Retrival</a>
-          <a data-screen="data" class="nav-item nav-link" >Available Tab</a>
-          <a data-screen="map" class="nav-item nav-link" >Available Tab</a> 
-          <a data-screen="about" class="nav-item nav-link" >Available Tab</a>       
+          <a data-screen="data" class="nav-item nav-link" >An Example</a>
+          <a data-screen="map" class="nav-item nav-link" >About Us</a> 
+            
         </div>
       </div>
       <!-- the original screens where placed here-->
@@ -174,13 +222,96 @@ https://bit.ly/378C5qZ
         <!-- another screen -->
         <center>
         <h1>Here is an example of how the tier 1 may look like </h1>
-        <p>This is currently under production</p>
         </center>
-        
-        <!-- The actual code that will be used to show the table -->
-        <iframe class="airtable-embed" src="https://airtable.com/embed/shrRdl8suw5JFddAO?backgroundColor=orange&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+        <center>
+    <h1>These are your charities:</h1>
+      <h2>Click on the Catagories that are in the screen to see what charities you got</h2>
+    </center>
+  
+<!-- Start of the accodion code -->
 
-        
+<button class="accordion"> Senior</button>
+<div class="panel">
+  <!-- belwo is where the content is going to be  -->
+  <iframe class="airtable-embed" src="https://airtable.com/embed/shrMFi7LkIrcM7uId?backgroundColor=orange&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+</div>
+
+<button class="accordion"> Grants </button>
+<div class="panel">
+  <!-- belwo is where the content is going to be  -->
+  <iframe class="airtable-embed" src="https://airtable.com/embed/shre1OFiQT3MAv9KC?backgroundColor=orange&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+</div>
+
+<button class="accordion"> Religious </button>
+<div class="panel">
+  <!-- belwo is where the content is going to be  -->
+  <iframe class="airtable-embed" src="https://airtable.com/embed/shrUfW4X5kj5trm2e?backgroundColor=orange&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+</div>
+
+<button class="accordion"> Business </button>
+<div class="panel">
+  <!-- belwo is where the content is going to be  -->
+  <iframe class="airtable-embed" src="https://airtable.com/embed/shrMKmV8MLJAk5mlS?backgroundColor=orange&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+</div>
+
+<button class="accordion"> Private </button>
+<div class="panel">
+  <!-- belwo is where the content is going to be  -->
+  <iframe class="airtable-embed" src="https://airtable.com/embed/shrK6vyQhQulInrNc?backgroundColor=orange&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+</div>
+
+<button class="accordion"> Fund Raising </button>
+<div class="panel">
+  <!-- belwo is where the content is going to be  -->
+  <iframe class="airtable-embed" src="https://airtable.com/embed/shr9g8Dyr14rV31Hy?backgroundColor=orange&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+</div>
+
+<!-- End of the accodion code -->
+<!-- Button that will take the user to the top -->
+
+<button onclick="topFunction()" id="myBtn" title="Go to top"> Top</button>        
+       <script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
+<!-- end of accodion script -->
+
+<!-- Start of the script for the TOP button -->
+<script>
+//on the right time of pressing the button
+
+mybutton =document.getElementById("myBtn");
+
+// When the user gets at 20px down, this will trigger the button 
+
+window.onscroll=function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// The action of getting the user to the top of the page
+function topFunction(){
+  document.body.scrollTop =0; //This is done exclusively for Safari web browser
+  document.documentElement.scrollTop=0; //This is for other chrome based web browser, and other brwosers
+}
+</script>
       </div>
 
 
